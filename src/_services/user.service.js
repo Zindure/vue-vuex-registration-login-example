@@ -1,5 +1,5 @@
 import config from 'config';
-import { authHeader } from '../_helpers';
+import {authHeader, router} from '../_helpers';
 //import {post} from "./api";
 const base = 'http://localhost:3000';
 
@@ -7,6 +7,7 @@ export const userService = {
     login,
     logout,
     register,
+    getLocations
 };
 
 function login(username, password) {
@@ -25,6 +26,8 @@ function logout() {
 }
 
 function register(user) {
+    let username = user.username;
+    let password = user.password;
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -33,26 +36,42 @@ function register(user) {
     return fetch(`${base}/users/register`, requestOptions).then(handleResponse);
 }
 
+export function getLocations(jwt) {
+
+    const requestOptions = {
+        method: 'GET',
+        //headers: { 'Bearer': jwt, "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS" ,"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With" },
+    };
+    return fetch(`${base}/locations?offset=0&limit=10`, requestOptions).then(handleResponse);
+}
+
+
+
 function handleResponse(response) {
     return response.text().then(text => {
+        if (response.method === "OPTIONS"){
+
+        }
         if (response.status === 200){
             const data = text && JSON.parse(text);
             if (!response.ok) {
-                if (response.status === 401) {
+                /*if (response.status === 401) {
                     // auto logout if 401 response returned from api
                     logout();
                     location.reload(true);
-                }
+                }*/
                 const error = (data && data.message) || response.statusText;
                 return Promise.reject(error);
             }
-
             if (data.jwt){
                 alert(data.jwt);
-                let JWT = data.jwt;
+                localStorage.setItem('jwt_token', data.jwt);
+                //router.push('/locations');
             }
+            return data;
         }
-
-        return data;
+/*        if (response.status === 201){
+            router.push('/login');
+        }*/
     });
 }

@@ -5,18 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02625d64-6505-4057-9206-815df6b2e45e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_services/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/fake-backend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_helpers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locations/locations.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_helpers/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_helpers/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_store/account.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_store/account.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/HomePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/register/RegisterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/register/RegisterPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,20 +39,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/nosave/ESILV/Object oriented development/vue-vuex-registration-login-example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/paule/Documents/vue-vuex-registration-login-example&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\nosave\ESILV\Object oriented development\vue-vuex-registration-login-example\src" />
@@ -61,6 +68,8 @@
       <updated>1675286310031</updated>
       <workItem from="1675286311111" duration="2593000" />
       <workItem from="1675288974888" duration="2705000" />
+      <workItem from="1675294208222" duration="1165000" />
+      <workItem from="1675371592843" duration="7109000" />
     </task>
     <servers />
   </component>

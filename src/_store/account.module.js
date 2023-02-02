@@ -14,7 +14,7 @@ const actions = {
             .then(
                 user => {
                     commit('loginSuccess', user);
-                    router.push('/');
+                    router.push('/locations');
                 },
                 error => {
                     commit('loginFailure', error);
