@@ -37,18 +37,20 @@ function register(user) {
 }
 
 export function getLocations(jwt) {
-
     const requestOptions = {
         method: 'GET',
-        //headers: { 'Bearer': jwt, "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS" ,"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With" },
+        mode:'cors',
+        headers: { Authorization: 'Bearer ' + jwt, "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS" ,"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With" },
     };
     return fetch(`${base}/locations?offset=0&limit=10`, requestOptions).then(handleResponse);
+
 }
 
 
 
 function handleResponse(response) {
     return response.text().then(text => {
+        console.log(text);
         if (response.method === "OPTIONS"){
 
         }
@@ -64,11 +66,11 @@ function handleResponse(response) {
                 return Promise.reject(error);
             }
             if (data.jwt){
-                alert(data.jwt);
+                //alert(data.jwt);
                 localStorage.setItem('jwt_token', data.jwt);
                 //router.push('/locations');
             }
-            return data;
+            return Promise.resolve(data);
         }
 /*        if (response.status === 201){
             router.push('/login');
