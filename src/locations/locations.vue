@@ -46,8 +46,10 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="location in locations" :key="location.id" v-on:click="rowClick(location)">
-        <td>{{location.adresse_lieu}}</td>
+      <tr v-for="location in locations" :key="location.id" >
+        <td v-on:click="rowClick(location)">{{location.adresse_lieu}}</td>
+        <td><button v-on:click="deleteEvent(location._id)">Delete</button></td>
+        <td><button v-on:click="editEvent(location._id)">Edit</button></td>
 <!--        <td>{{location.annee_tournage}}</td>
             <td>{{location.nom_realisateur}}</td>-->
       </tr>
@@ -58,7 +60,7 @@
 </template>
 <script>
 
-import {getLocations} from "../_services";
+import {getLocations,deleteLocation} from "../_services";
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
@@ -89,7 +91,14 @@ export default {
     this.showModal = true;
     this.locationList = false;
     console.log(this.showModal);
-}
+},
+  deleteEvent(id){
+  deleteLocation(id);
+  this.$router.go();
+  },
+  editEvent(){
+
+  }
   },
 };
 </script>

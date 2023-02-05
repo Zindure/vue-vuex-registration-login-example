@@ -7,7 +7,8 @@ export const userService = {
     login,
     logout,
     register,
-    getLocations
+    getLocations,
+    deleteLocation
 };
 
 function login(username, password) {
@@ -42,11 +43,19 @@ export function getLocations(jwt) {
         mode:'cors',
         headers: { Authorization: 'Bearer ' + jwt, "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS" ,"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With" },
     };
-    return fetch(`${base}/locations?offset=0&limit=10`, requestOptions).then(handleResponse);
+    return fetch(`${base}/locations?offset=0&limit=100`, requestOptions).then(handleResponse);
 
 }
 
-
+export function deleteLocation(id){
+    let jwt = localStorage.getItem('jwt_token');
+    const requestOptions = {
+        method: 'DELETE',
+        mode:'cors',
+        headers: { Authorization: 'Bearer ' + jwt, "Content-Typer": "application/json" },
+    };
+    return fetch(`${base}/locations/${id}`, requestOptions).then(handleResponse);
+}
 
 function handleResponse(response) {
     return response.text().then(text => {
